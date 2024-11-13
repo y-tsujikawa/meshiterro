@@ -45,7 +45,15 @@
       </nav>
     </header>
     <main class="mb-auto">
-      <%= yield %>
+      <div class="container">
+        <% if notice %>
+          <p class="my-3 alert alert-primary"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="my-3 alert alert-danger"><%= alert %></p>
+        <% end %>
+      </div>
+    <%= yield %>
     </main>
     <footer class="bg-dark text-white pt-5 pb-4">
       <div class="container">
